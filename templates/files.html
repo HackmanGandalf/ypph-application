@@ -1,0 +1,29 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<button style="padding:2em;"> <a href="{{ url_for('logout') }}" style="padding:2em ">Log Out</a> </button>
+
+
+
+<div class="jumbotron">
+    <div class="container" style="padding: 2em">
+      <h1 class="display-4">Welcome to the YPPH application portal!</h1>
+      <br><br>
+        
+        <button style="padding:2em;"> <a href="{{ url_for('vip') }}" style="padding:2em ">VIP</a> </button>
+        
+        <button style="padding:2em;"> <a href="{{ url_for('hllp') }}" style="padding:2em ">HLLP</a> </button>
+        
+        <button style="padding:2em;"> <a href="{{ url_for('deal') }}" style="padding:2em ">DEAL</a> </button>
+        
+     
+
+    </div>
+  </div>
+  
+{% endblock %}
