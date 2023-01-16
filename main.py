@@ -156,9 +156,9 @@ def delete(id):
     db.session.commit()
     return render_template (url_for('files'))
 
-@app.route('/apply')
-def login():
-    return render_template('success.html')
+# @app.route('/apply')
+# def login():
+#     return render_template('success.html')
 
 @app.route('/apply', methods=['GET', 'POST'])
 def login():
