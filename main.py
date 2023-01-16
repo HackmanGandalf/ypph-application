@@ -22,6 +22,7 @@ PASSWORD = os.environ.get("PASSWORD")
 TO_EMAIL = os.environ.get("TO_EMAIL")
 
 app = Flask(__name__)
+app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
 Bootstrap(app)
@@ -70,9 +71,9 @@ class MyForm(FlaskForm):
     citizen = StringField(label='What is your country of birth?', validators=[DataRequired()])
     residence = StringField(label='What is your country of residence?', validators=[DataRequired()])
     category = SelectField('What YPPH programme are you applying for?', choices=["", "Virtual Internship Program (VIP)", "Health Literacy and Leadership Programme (HLLP)", "The Design, Equity, Action and Leadership Fellowship (DEAL)"], validators=[DataRequired()])
-    support = FileField(label='Please upload supporting statement here', validators=[DataRequired()])
-    resume = FileField(label='Please upload your résumé here', validators=[DataRequired()])
-    picture = FileField(label='Please upload your passport photograph here', validators=[DataRequired()])
+    support = FileField(label='Please upload supporting statement here. (Maximum file size is 1mb. You application will not be submitted if file is larger than 1mb.)', validators=[DataRequired()])
+    resume = FileField(label='Please upload your résumé here. (Maximum file size is 1mb. You application will not be submitted if file is larger than 1mb.)', validators=[DataRequired()])
+    picture = FileField(label='Please upload your passport photograph here. (Maximum file size is 1mb. You application will not be submitted if file is larger than 1mb.)', validators=[DataRequired()])
     submit = SubmitField(label='Submit')
 
 class RegisterForm(FlaskForm):
