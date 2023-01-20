@@ -215,7 +215,7 @@ def login():
         
 #         #Log in and authenticate user after adding details to database.
 #         login_user(new_user)
-        
+        #
 #         return redirect(url_for("files"))
 
 #     return render_template("register.html", form=form)
